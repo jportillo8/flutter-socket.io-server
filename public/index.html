@@ -24,8 +24,14 @@
 
         socket.emit('mensaje', {nombre: 'Lucrecia'})
 
-        socket.on('mensaje', function( payload){
+        socket.on('nuevo-mensaje', function( payload){
             console.log('Escuchando:' , payload );
+        });
+
+        // Escuchando las bandas del sevidor
+        socket.on('active-bands', function( payload ) {
+            console.clear();
+            console.table( payload );
         });
 
     </script>
